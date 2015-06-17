@@ -1,0 +1,16 @@
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\bin\Debug\mysql.data.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.csprojResolveAssemblyReference.cache
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\Conexao\bin\Debug\mysql.data.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\Conexao\bin\Debug\Conexao.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\Conexao\obj\Debug\Conexao.csprojResolveAssemblyReference.cache

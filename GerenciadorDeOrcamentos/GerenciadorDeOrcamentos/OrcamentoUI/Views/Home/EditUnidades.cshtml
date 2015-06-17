@@ -1,0 +1,52 @@
+﻿@model OrcamentoData.Unidades
+
+@{
+    ViewBag.Title = "EditUnidades";
+}
+
+<h2>EditUnidades</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Unidades</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUnidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdUnidade)
+            @Html.ValidationMessageFor(model => model.IdUnidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sigla)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sigla)
+            @Html.ValidationMessageFor(model => model.Sigla)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeUnidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeUnidade)
+            @Html.ValidationMessageFor(model => model.NomeUnidade)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexEnidades")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,52 @@
+﻿@model OrcamentoData.Categorias
+
+@{
+    ViewBag.Title = "CreateCategorias";
+}
+
+<h2>CreateCategorias</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Categorias</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.IdCategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdCategoria)
+            @Html.ValidationMessageFor(model => model.IdCategoria)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeCategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeCategoria)
+            @Html.ValidationMessageFor(model => model.NomeCategoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescricaoCategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescricaoCategoria)
+            @Html.ValidationMessageFor(model => model.DescricaoCategoria)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexCategorias")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

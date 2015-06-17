@@ -1,0 +1,30 @@
+﻿@model IEnumerable<OrcamentoData.Unidades>
+
+@{
+    ViewBag.Title = "IndexUnidades";
+}
+
+<br />
+<h4>@Html.ActionLink("Nova", "CreateUnidades") </h4>
+
+<h1>Unidades</h1>
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Sigla</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var unidade in Model)
+    {
+        <tr>
+            <td>@unidade.IdUnidade</td>
+            <td>@unidade.NomeUnidade</td>
+            <td>@unidade.Sigla</td>
+            <td>@Html.ActionLink("Editar", "EditUnidades", new { pIdUnidade = unidade.IdUnidade }) </td>
+            <td>@Html.ActionLink("Excluir", "DeleteUnidades", new { pIdUnidade = unidade.IdUnidade })</td>
+        </tr>
+    }
+</table>

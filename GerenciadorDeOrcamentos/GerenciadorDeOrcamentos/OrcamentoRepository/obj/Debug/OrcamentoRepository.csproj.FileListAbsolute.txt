@@ -1,0 +1,24 @@
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.csprojResolveAssemblyReference.cache
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\Comercial\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\mysql.data.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoData.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\Conexao.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoData.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.csprojResolveAssemblyReference.cache
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoRepository.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\Conexao.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoData.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\Conexao.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\bin\Debug\OrcamentoData.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.csprojResolveAssemblyReference.cache
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoRepository\obj\Debug\OrcamentoRepository.pdb

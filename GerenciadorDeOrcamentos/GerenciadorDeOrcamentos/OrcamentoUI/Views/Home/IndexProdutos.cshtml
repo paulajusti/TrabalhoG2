@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OrcamentoData.Produtos>
+
+@{
+    ViewBag.Title = "IndexProdutos";
+}
+
+<br />
+<h4>@Html.ActionLink("Novo", "CreateProdutos") </h4>
+
+<h1>Produtos</h1>
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Unidade</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <th>@produto.IdProduto</th>
+            <th>@produto.NomeProduto</th>
+            <th>@produto.Valor</th>
+            <th>@produto.DescricaoProduto</th>
+            <th>@produto.Categoria.NomeCategoria</th>
+            <th>@produto.Unidade.Sigla</th>
+            <td>@Html.ActionLink("Editar", "EditProdutos", new { pIdProduto = produto.IdProduto }) </td>
+            <td>@Html.ActionLink("Excluir", "DeleteProdutos", new { pIdProduto = produto.IdProduto })</td>
+        </tr>
+    }
+</table>

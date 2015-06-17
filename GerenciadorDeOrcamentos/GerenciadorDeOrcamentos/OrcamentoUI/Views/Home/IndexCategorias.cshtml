@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OrcamentoData.Categorias>
+
+@{
+    ViewBag.Title = "IndexCategorias";
+}
+
+<br />
+<h4>@Html.ActionLink("Nova", "CreateCategorias") </h4>
+
+<h1>Categorias</h1>
+<table class="table">
+    <tr>
+        <th>Código</th>
+        <th>Nome<th>
+        <th>Descrição</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var categoria in Model)
+    {
+        <tr>
+            <td>@categoria.IdCategoria</td>
+            <td>@categoria.NomeCategoria</td>
+            <td>@categoria.DescricaoCategoria</td>
+            <td>@Html.ActionLink("Editar", "EditCategorias", new { pIdCategoria = categoria.IdCategoria }) </td>
+            <td>@Html.ActionLink("Excluir", "DeleteCategorias", new { pIdCategoria = categoria.IdCategoria })</td>
+        </tr>
+    }
+</table>
+

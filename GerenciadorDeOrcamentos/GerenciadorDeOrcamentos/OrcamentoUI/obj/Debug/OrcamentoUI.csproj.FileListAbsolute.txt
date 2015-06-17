@@ -1,0 +1,77 @@
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.dll.config
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Antlr3.Runtime.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Conexao.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Newtonsoft.Json.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoData.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoRepository.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Net.Http.Formatting.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Helpers.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.WebHost.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Mvc.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Optimization.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Razor.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\WebGrease.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\MySql.Data.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Conexao.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoData.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoRepository.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Newtonsoft.Json.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Net.Http.Formatting.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Helpers.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.WebHost.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Mvc.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Optimization.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Razor.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\bin\Antlr3.Runtime.pdb
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.csprojResolveAssemblyReference.cache
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.dll
+C:\Users\Maurício Buzata\Documents\Visual Studio 2013\Projects\LPOO 2\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.dll.config
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoUI.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Antlr3.Runtime.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Conexao.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Newtonsoft.Json.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoData.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoRepository.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Net.Http.Formatting.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Helpers.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.WebHost.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Mvc.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Optimization.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Razor.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\WebGrease.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Conexao.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoData.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\OrcamentoRepository.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Newtonsoft.Json.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Net.Http.Formatting.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Helpers.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Http.WebHost.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Mvc.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Optimization.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.Razor.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\bin\Antlr3.Runtime.pdb
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.csprojResolveAssemblyReference.cache
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.dll
+C:\Users\u ser\Documents\Facul\5´ Semestre\3 - Linguagem de Programação Orientada a Objetos ll\Projetos Aula\GerenciadorDeOrcamentos\GerenciadorDeOrcamentos\OrcamentoUI\obj\Debug\OrcamentoUI.pdb

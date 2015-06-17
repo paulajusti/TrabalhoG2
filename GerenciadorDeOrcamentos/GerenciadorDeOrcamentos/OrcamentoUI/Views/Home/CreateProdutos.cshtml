@@ -1,0 +1,74 @@
+﻿@model OrcamentoData.Produtos
+
+@{
+    ViewBag.Title = "CreateProdutos";
+}
+
+<h2>CreateProdutos</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Produtos</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.IdProduto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdProduto)
+            @Html.ValidationMessageFor(model => model.IdProduto)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeProduto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeProduto)
+            @Html.ValidationMessageFor(model => model.NomeProduto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Valor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Valor)
+            @Html.ValidationMessageFor(model => model.Valor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescricaoProduto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescricaoProduto)
+            @Html.ValidationMessageFor(model => model.DescricaoProduto)
+        </div>
+
+        <div>
+            @Html.Label("Selecione a categoria")
+        </div>
+        <div>
+            @Html.DropDownListFor(model => model.Categoria.IdCategoria, ViewBag.Categorias as SelectList, string.Empty)
+        </div>
+
+        <div>
+            @Html.Label("Selecione o tipo de unidade")
+        </div>
+        <div>
+            @Html.DropDownListFor(model => model.Unidade.IdUnidade, ViewBag.Unidades as SelectList, string.Empty)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexProdutos")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

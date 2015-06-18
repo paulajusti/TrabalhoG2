@@ -14,13 +14,13 @@ namespace OrcamentoData
 
 
 
-        [Display(Name = "Nome da Categoria:")]
+        [Display(Name = "Nome:")]
         [Required(ErrorMessage = "O campo Nome da Categoria deve ser preenchido.")]
         public string NomeCategoria { get; set; }
 
 
 
-        [Display(Name = "Descrição da Categoria:")]
+        [Display(Name = "Descrição:")]
         [Required(ErrorMessage = "O campo Descrição da Categoria deve ser preenchido.")]
         public string DescricaoCategoria { get; set; }
 

@@ -29,7 +29,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             while (dr.Read())
             {
@@ -68,7 +68,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             dr.Read();
 

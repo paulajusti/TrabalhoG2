@@ -20,33 +20,29 @@ namespace OrcamentoRepository
             sql.Append("Select * ");
             sql.Append("From clientes ");
             sql.Append("order by idcliente asc");
-
             cmd.CommandText = sql.ToString();
 
             MySqlDataReader dr = BaseDados.Get(cmd);
 
-            dr.Read();
-            
             while (dr.Read())
             {
                 Cliente.Add(
-                        new Clientes
-                        {
-                            IdCliente = (int)dr["idcliente"],
-                            NomeCliente = (string)dr["nomecliente"],
-                            CPF = (string)dr["cpf"],
-                            RG = (string)dr["rg"],
-                            Telefone = (string)dr["telefone"],
-                            Endereco = (string)dr["endereco"],
-                            Numero = (int)dr["numero"],
-                            Bairro = (string)dr["bairro"],
-                            Cidade = (string)dr["cidade"],
-                            UF = (string)dr["uf"],
-                            CEP = (string)dr["cep"]
-                        }
-                    );
+                    new Clientes
+                    {
+                        IdCliente = (int)dr["idcliente"],
+                        NomeCliente = (string)dr["nomecliente"],
+                        CPF = (string)dr["cpf"],
+                        RG = (string)dr["rg"],
+                        Telefone = (string)dr["telefone"],
+                        Endereco = (string)dr["endereco"],
+                        Numero = (int)dr["numero"],
+                        Bairro = (string)dr["bairro"],
+                        Cidade = (string)dr["cidade"],
+                        UF = (string)dr["uf"],
+                        CEP = (string)dr["cep"]
+                    }
+                );
             }
-
             dr.Close();
             return Cliente;
         }
@@ -70,20 +66,31 @@ namespace OrcamentoRepository
 
             Clientes Cliente;
 
-            Cliente = new Clientes
+            if (dr != null)
             {
-                IdCliente = (int)dr["idcliente"],
-                NomeCliente = (string)dr["nomecliente"],
-                CPF = (string)dr["cpf"],
-                RG = (string)dr["rg"],
-                Telefone = (string)dr["telefone"],
-                Endereco = (string)dr["endereco"],
-                Numero = (int)dr["numero"],
-                Bairro = (string)dr["bairro"],
-                Cidade = (string)dr["cidade"],
-                UF = (string)dr["uf"],
-                CEP = (string)dr["cep"]
-            };
+                Cliente = new Clientes
+                {
+                    IdCliente = (int)dr["idcliente"],
+                    NomeCliente = (string)dr["nomecliente"],
+                    CPF = (string)dr["cpf"],
+                    RG = (string)dr["rg"],
+                    Telefone = (string)dr["telefone"],
+                    Endereco = (string)dr["endereco"],
+                    Numero = (int)dr["numero"],
+                    Bairro = (string)dr["bairro"],
+                    Cidade = (string)dr["cidade"],
+                    UF = (string)dr["uf"],
+                    CEP = (string)dr["cep"]
+                };
+            }
+            else
+            {
+                Cliente = new Clientes
+                {
+                    IdCliente = (int)dr["idcliente"],
+                    NomeCliente = (string)dr["nomecliente"]
+                };
+            }
 
             dr.Close();
             return Cliente;
@@ -93,10 +100,9 @@ namespace OrcamentoRepository
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Insert into clientes (idcliente, nomecliente, cpf, rg, telefone, endereco, numero, bairro, cidade, uf, cep) ");
-            sql.Append("values(@idcliente, @nomecliente, @cpf, @rg, @telefone, @endereco, @numero, @bairro, @cidade, @uf, @cep)");
+            sql.Append("Insert into clientes (nomecliente, cpf, rg, telefone, endereco, numero, bairro, cidade, uf, cep) ");
+            sql.Append("values(@nomecliente, @cpf, @rg, @telefone, @endereco, @numero, @bairro, @cidade, @uf, @cep)");
 
-            cmd.Parameters.AddWithValue("@idcliente", pCliente.IdCliente);
             cmd.Parameters.AddWithValue("@nomecliente", pCliente.NomeCliente);
             cmd.Parameters.AddWithValue("@cpf", pCliente.CPF);
             cmd.Parameters.AddWithValue("@rg", pCliente.RG);
@@ -132,11 +138,11 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
             sql.Append("update clientes ");
-            sql.Append("set nome=@nome, cpf=@cpf, rg=@rg, telefone=@telefone, endereco=@endereco, numero=@numero, bairro=@bairro, cidade=@cidade, uf=@uf, cep=@cep) ");
-            sql.Append("where idcliente=@idcliente");
+            sql.Append("set nomecliente=@nomecliente, cpf=@cpf, rg=@rg, telefone=@telefone, endereco=@endereco, numero=@numero, bairro=@bairro, cidade=@cidade, uf=@uf, cep=@cep ");
+            sql.Append("where idcliente = @idcliente");
 
             cmd.Parameters.AddWithValue("@idcliente", pCliente.IdCliente);
-            cmd.Parameters.AddWithValue("@nome", pCliente.NomeCliente);
+            cmd.Parameters.AddWithValue("@nomecliente", pCliente.NomeCliente);
             cmd.Parameters.AddWithValue("@cpf", pCliente.CPF);
             cmd.Parameters.AddWithValue("@rg", pCliente.RG);
             cmd.Parameters.AddWithValue("@telefone", pCliente.Telefone);
@@ -150,6 +156,42 @@ namespace OrcamentoRepository
             cmd.CommandText = sql.ToString();
 
             BaseDados.ComandPersist(cmd);
+        }
+
+        public static List<Clientes> PesquisarClientes(string Nome)
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+            List<Clientes> Cliente = new List<Clientes>();
+
+            sql.Append("Select * ");
+            sql.Append("From clientes where nomecliente like '%" + Nome + "%'");
+            sql.Append("order by nomecliente asc");
+            cmd.CommandText = sql.ToString();
+
+            MySqlDataReader dr = BaseDados.Get(cmd);
+
+            while (dr.Read())
+            {
+                Cliente.Add(
+                    new Clientes
+                    {
+                        IdCliente = (int)dr["idcliente"],
+                        NomeCliente = (string)dr["nomecliente"],
+                        CPF = (string)dr["cpf"],
+                        RG = (string)dr["rg"],
+                        Telefone = (string)dr["telefone"],
+                        Endereco = (string)dr["endereco"],
+                        Numero = (int)dr["numero"],
+                        Bairro = (string)dr["bairro"],
+                        Cidade = (string)dr["cidade"],
+                        UF = (string)dr["uf"],
+                        CEP = (string)dr["cep"]
+                    }
+                );
+            }
+            dr.Close();
+            return Cliente;
         }
     }
 }

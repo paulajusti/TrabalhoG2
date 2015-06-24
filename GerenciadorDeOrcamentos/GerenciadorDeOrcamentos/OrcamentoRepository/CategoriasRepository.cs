@@ -117,5 +117,36 @@ namespace OrcamentoRepository
 
             BaseDados.ComandPersist(cmd);
         }
+
+
+        public static List<Categorias> PesquisarCategorias(string Nome)
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+            List<Categorias> Categoria = new List<Categorias>();
+
+            sql.Append("Select * ");
+            sql.Append("From categorias where nomecategoria like '%"+Nome+"%'");
+            sql.Append("order by nomecategoria asc");
+            cmd.CommandText = sql.ToString();
+
+            MySqlDataReader dr = BaseDados.Get(cmd);
+
+            while (dr.Read())
+            {
+                Categoria.Add(
+                    new Categorias
+                    {
+                        IdCategoria = (int)dr["idcategoria"],
+                        NomeCategoria = (string)dr["nomecategoria"],
+                        DescricaoCategoria = (string)dr["descricaocategoria"]
+                    }
+                );
+            }
+            dr.Close();
+            return Categoria;
+        }
+
+
     }
 }

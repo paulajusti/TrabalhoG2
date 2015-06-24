@@ -23,7 +23,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             while (dr.Read())
             {
@@ -53,7 +53,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             dr.Read();
 
@@ -61,7 +61,7 @@ namespace OrcamentoRepository
 
             Unidade = new Unidades
             {
-                IdUnidade = (int)dr["idorcamento"],
+                IdUnidade = (int)dr["idunidade"],
                 NomeUnidade = (string)dr["nomeunidade"],
                 Sigla = (string)dr["sigla"]
             };
@@ -105,7 +105,7 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
             sql.Append("update unidades ");
-            sql.Append("set nomeunidade=@nomeunidade, sigla=@siglas ");
+            sql.Append("set nomeunidade=@nomeunidade, sigla=@sigla ");
             sql.Append("where idunidade=@idunidade");
 
 
@@ -116,6 +116,35 @@ namespace OrcamentoRepository
             cmd.CommandText = sql.ToString();
 
             BaseDados.ComandPersist(cmd);
+        }
+
+
+        public static List<Unidades> PesquisarUnidades(string Nome)
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+            List<Unidades> Unidade = new List<Unidades>();
+
+            sql.Append("Select * ");
+            sql.Append("From unidades where nomeunidade like '%" + Nome + "%'");
+            sql.Append("order by nomeunidade asc");
+            cmd.CommandText = sql.ToString();
+
+            MySqlDataReader dr = BaseDados.Get(cmd);
+
+            while (dr.Read())
+            {
+                Unidade.Add(
+                    new Unidades
+                    {
+                        IdUnidade = (int)dr["idunidade"],
+                        NomeUnidade = (string)dr["nomeunidade"],
+                        Sigla = (string)dr["sigla"]
+                    }
+                );
+            }
+            dr.Close();
+            return Unidade;
         }
     }
 }

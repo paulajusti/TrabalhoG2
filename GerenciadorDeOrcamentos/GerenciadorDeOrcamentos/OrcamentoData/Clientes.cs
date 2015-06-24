@@ -1,60 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
 namespace OrcamentoData
 {
     public class Clientes
     {
+        [Display(Name = "Id")]
         public int IdCliente { get; set; }
 
 
-        [Display(Name = "Nome:")]
+        [Display(Name = "Nome")]
         [Required(ErrorMessage = "O campo Nome do Cliente deve ser preenchido.")]
         public string NomeCliente { get; set; }
 
 
-        [Display(Name = "CPF:")]
-        [Required(ErrorMessage = "O campo CPF deve ser preenchido.")]
-        [MinLength(11, ErrorMessage = "O tamanho mínimo do cpf são 11 caracteres.")]
-        [StringLength(11, ErrorMessage = "O tamanho máximo são 200 caracteres.")]
-        [MaxLength(11, ErrorMessage = "O tamanho máximo do nome são 11 caracteres.")]
+        [Display(Name = "CPF")]
+        [Required(ErrorMessage = "O campo CPF deve ser preenchido e ter 11 dígitos.")]
+        [StringLength(11)]
+        [MinLength(11)]
         public string CPF { get; set; }
 
 
-        [Display(Name = "RG:")]
-        [MinLength(11, ErrorMessage = "O tamanho mínimo do nome são 11 caracteres.")]
-        [StringLength(11, ErrorMessage = "O tamanho máximo são 200 caracteres.")]
-        [MaxLength(11, ErrorMessage = "O tamanho máximo do nome são 11 caracteres.")]
+        [Display(Name = "RG")]
+        [Required(ErrorMessage = "O campo RG deve ser preenchido e ter 10 dígitos.")]
+        [StringLength(10)]
+        [MinLength(10)]
         public string RG { get; set; }
 
 
-        [Display(Name = "Telefone:")]
+        [Display(Name = "Telefone")]
+        [StringLength(12)]
         public string Telefone { get; set; }
 
 
-        [Display(Name = "Endereço:")]
+        [Display(Name = "Endereço")]
         public string Endereco { get; set; }
 
-        [Display(Name = "Número:")]
+
+        [Display(Name = "Número")]
         public int Numero { get; set; }
 
 
-        [Display(Name = "Bairro:")]
+        [Display(Name = "Bairro")]
         public string Bairro { get; set; }
 
 
-        [Display(Name = "Cidade:")]
+        [Display(Name = "Cidade")]
         public string Cidade { get; set; }
 
 
-        [Display(Name = "UF:")]
+        [Display(Name = "UF")]
+        [StringLength(2)]
+        [MinLength(2)]
         public string UF { get; set; }
 
-         [Display(Name = "CEP:")]
+
+        [Display(Name = "CEP")]
+        [StringLength(9)]
+        [MinLength(9)]
         public string CEP { get; set; }
     }
 }

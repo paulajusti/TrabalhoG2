@@ -41,7 +41,8 @@ namespace OrcamentoRepository
                         {
                             NomeCliente = (string)dr["nomecliente"]
                         },
-                        Produto = (List<Produtos>)dr["nomeproduto"]
+                        //Produto = (List<Produtos>)dr["nomeproduto"]
+                        TotalOrcamento = (decimal)dr["totalorcamento"]
                     }
                 );
             }
@@ -81,23 +82,45 @@ namespace OrcamentoRepository
                 {
                     NomeCliente = (string)dr["nomecliente"]
                 },
-                Produto = (List<Produtos>)dr["nomeproduto"]
+                TotalOrcamento = (decimal)dr["totalorcamento"]
+                // Produto = (List<Produtos>)dr["nomeproduto"]
             };
 
             dr.Close();
             return Orcamento;
         }
 
+        public static int CreateFirst()
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+
+            sql.Append("Insert into orcamentos (idorcamento, idcliente) ");
+            sql.Append("values(@idorcamento, 1)");
+
+            Orcamentos Orcamento = OrcamentosRepository.MaxId();
+
+            int id = Orcamento.IdOrcamento + 1;
+
+            cmd.Parameters.AddWithValue("@idorcamento", id);
+
+            cmd.CommandText = sql.ToString();
+
+            BaseDados.ComandPersist(cmd);
+
+            return id;
+        }
+
         public void Create(Orcamentos pOrcamento)
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Insert into orcamentos (idorcamento, idcliente, produtos)" );
-            sql.Append("values(@idorcamento, @idcliente, @produtos)" );
+            sql.Append("Insert into orcamentos (idorcamento, idcliente, totalorcamento)" );
+            sql.Append("values(@idorcamento, @idcliente, @totalorcamento)");
 
             cmd.Parameters.AddWithValue("@idorcamento", pOrcamento.IdOrcamento);
             cmd.Parameters.AddWithValue("@idcliente", pOrcamento.Cliente.IdCliente);
-            cmd.Parameters.AddWithValue("@produtos", pOrcamento.Produto);
+            cmd.Parameters.AddWithValue("@totalorcamento", pOrcamento.TotalOrcamento);
 
             cmd.CommandText = sql.ToString();
 
@@ -123,17 +146,61 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
             sql.Append("update orcamentos ");
-            sql.Append("set idcliente=@idcliente, produtos=@produtos ");
+            sql.Append("set idcliente=@idcliente, totalorcamento=@totalorcamento ");
             sql.Append("where idorcamento=@idorcamento");
 
 
             cmd.Parameters.AddWithValue("@idorcamento", pOrcamento.IdOrcamento);
             cmd.Parameters.AddWithValue("@idcliente", pOrcamento.Cliente.IdCliente);
-            cmd.Parameters.AddWithValue("@produtos", pOrcamento.Produto);
+            cmd.Parameters.AddWithValue("@totalorcamento", pOrcamento.TotalOrcamento);
 
             cmd.CommandText = sql.ToString();
 
             BaseDados.ComandPersist(cmd);
+        }
+
+        public static Orcamentos MaxId()
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+
+            sql.Append("Select idorcamento ");
+            sql.Append("From orcamentos ");
+            sql.Append("where idorcamento=( ");
+            sql.Append("select max(idorcamento) ");
+            sql.Append("from orcamentos) ");
+
+            cmd.CommandText = sql.ToString();
+
+            MySqlDataReader dr = BaseDados.Get(cmd);
+
+            dr.Read();
+
+            if(dr.HasRows)
+            {
+                //encontrou resultados
+                Orcamentos Orcamento;
+                      
+                Orcamento = new Orcamentos
+                {
+                    IdOrcamento = (int)dr["idorcamento"]
+                };
+                    
+                dr.Close();
+                return Orcamento;
+            }
+            else
+            {
+                Orcamentos Orcamento;
+                      
+                Orcamento = new Orcamentos
+                {
+                    IdOrcamento = 0
+                };
+                    
+                dr.Close();
+                return Orcamento;
+            }
         }
     }
 }

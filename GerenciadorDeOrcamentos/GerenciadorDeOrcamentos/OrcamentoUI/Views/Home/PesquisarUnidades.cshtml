@@ -1,24 +1,11 @@
 ﻿@model IEnumerable<OrcamentoData.Unidades>
 
 @{
-    ViewBag.Title = "IndexUnidades";
+    ViewBag.Title = "PesquisarUnidades";
 }
 
-<h2>Unidades</h2>
-
-<div style="margin-left:78%;">
-    <h4 style="margin-left:5%;">Pesquisar Por Nome:</h4>
-    <form action="/Home/PesquisarUnidades" method="post" style="text-align:left">
-        <input style="width: 100px;" id="Nome" type="text" name="Nome" />
-        <input type="submit" name="pesquisar" value="Pesquisar" />
-    </form>
-</div>
-<br />
-
-
-<p>
-    @Html.ActionLink("Cadastrar", "CreateUnidades")
-</p>
+<h2>PesquisarUnidades</h2>
+<br /><br />
 <table class="table">
     <tr>
         <th>
@@ -43,10 +30,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Sigla)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "EditUnidades", new { pIdUnidade = item.IdUnidade }) |
-            @Html.ActionLink("Deletar", "DeleteUnidades", new { pIdUnidade = item.IdUnidade })
         </td>
     </tr>
 }

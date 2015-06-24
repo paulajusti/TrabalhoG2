@@ -6,45 +6,41 @@
 
 <h2>CreateCategorias</h2>
 
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm()) 
+{
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    
+    <div class="form-horizontal">
+        <h4>Categorias</h4>
+        <hr />
 
-    <fieldset>
-        <legend>Categorias</legend>
-
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.IdCategoria)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IdCategoria)
-            @Html.ValidationMessageFor(model => model.IdCategoria)
-        </div>*@
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NomeCategoria)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NomeCategoria)
-            @Html.ValidationMessageFor(model => model.NomeCategoria)
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeCategoria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NomeCategoria, "", new { @class = "text-danger" })
+            </div>
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DescricaoCategoria)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DescricaoCategoria)
-            @Html.ValidationMessageFor(model => model.DescricaoCategoria)
+        <div class="form-group">
+            @Html.LabelFor(model => model.DescricaoCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DescricaoCategoria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DescricaoCategoria, "", new { @class = "text-danger" })
+            </div>
         </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "IndexCategorias")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

@@ -128,9 +128,19 @@ namespace OrcamentoUI.Controllers
             return View(orc);
         }
 
-        [HttpGet]
-        public ActionResult CreateOrcamentos()
+        public ActionResult IniciarOrcamentos()
         {
+            int IdOrcamento = OrcamentosRepository.CreateFirst();
+            return RedirectToAction("CreateOrcamentos", new { id = IdOrcamento });
+        }
+
+        [HttpGet]
+        public ActionResult CreateOrcamentos(int id)
+        {
+            ViewBag.Clientes = new SelectList(ClientesRepository.GetAll(), "IdCliente", "NomeCliente");
+            ViewBag.Produtos = new SelectList(ProdutosRepository.GetAll(), "IdProduto", "NomeProduto");
+            ViewBag.OrcProd = OrcamentosProdutosRepository.GetAll();
+            ViewBag.IdOrcamento = id;
             return View();
         }
 
@@ -173,6 +183,38 @@ namespace OrcamentoUI.Controllers
         }
         #endregion
 
+        #region OrcamentosProdutos
+
+        [HttpGet]
+        public ActionResult AddProdutos()
+        {
+            ViewBag.Produtos = new SelectList(ProdutosRepository.GetAll(), "IdProduto", "NomeProduto");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProdutos(OrcamentosProdutos OrcProd)
+        {
+            int IdOrcamento = OrcamentosProdutosRepository.Create(OrcProd);
+            return RedirectToAction("CreateOrcamentos", new { id = IdOrcamento });
+        }
+
+        [HttpGet]
+        public ActionResult ExcluirProduto(int pIdOrcamento, int pIdProduto)
+        {
+            var orcprod = OrcamentosProdutosRepository.GetOne(pIdOrcamento, pIdProduto);
+            return View(orcprod);
+        }
+
+        [HttpPost]
+        public ActionResult ExcluirProduto(Orcamentos Orcamento, Produtos Produto)
+        {
+            OrcamentosProdutosRepository del = new OrcamentosProdutosRepository();
+            del.Delete(Orcamento.IdOrcamento, Produto.IdProduto);
+            return RedirectToAction("CreateOrcamentos");
+        }
+        #endregion
+
         #region Produtos
         public ActionResult IndexProdutos()
         {
@@ -199,7 +241,9 @@ namespace OrcamentoUI.Controllers
         [HttpGet]
         public ActionResult EditProdutos(int pIdProduto)
         {
-            var prod = OrcamentosRepository.GetOne(pIdProduto);
+            var prod = ProdutosRepository.GetOne(pIdProduto);
+            ViewBag.Categorias = new SelectList(CategoriasRepository.GetAll(), "IdCategoria", "NomeCategoria");
+            ViewBag.Unidades = new SelectList(UnidadesRepository.GetAll(), "IdUnidade", "Sigla");
             return View(prod);
         }
 

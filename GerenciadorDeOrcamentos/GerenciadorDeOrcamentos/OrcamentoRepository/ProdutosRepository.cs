@@ -27,7 +27,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             while (dr.Read())
             {
@@ -58,19 +58,19 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("Select p.*, nomecategoria, sigla ");
+            sql.Append("Select p.*, c.nomecategoria, u.sigla ");
             sql.Append("From produtos p ");
             sql.Append("inner join categorias c ");
-            sql.Append("on p.idcategoria=c.idcategoria ");
+            sql.Append("on (p.idcategoria=c.idcategoria) ");
             sql.Append("inner join unidades u ");
-            sql.Append("on p.idunidade=u.idunidade ");
-            sql.Append("Where idproduto=@idproduto");
+            sql.Append("on (p.idunidade=u.idunidade) ");
+            sql.Append("Where p.idproduto=@idproduto");
 
-            cmd.Parameters.AddWithValue("@idunidade", pIdProduto);
+            cmd.Parameters.AddWithValue("@idproduto", pIdProduto);
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             dr.Read();
 
@@ -119,7 +119,7 @@ namespace OrcamentoRepository
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from produto ");
+            sql.Append("Delete from produtos ");
             sql.Append("where idproduto=@idproduto");
 
             cmd.Parameters.AddWithValue("@idproduto", pIdProduto);

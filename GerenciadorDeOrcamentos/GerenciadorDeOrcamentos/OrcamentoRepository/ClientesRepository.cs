@@ -23,27 +23,30 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
+            dr.Read();
+            
             while (dr.Read())
             {
                 Cliente.Add(
-                    new Clientes
-                    {
-                        IdCliente = (int)dr["idcliente"],
-                        NomeCliente = (string)dr["nomecliente"],
-                        CPF = (string)dr["cpf"],
-                        RG = (string)dr["rg"],
-                        Telefone = (string)dr["telefone"],
-                        Endereco = (string)dr["endereco"],
-                        Numero = (int)dr["numero"],
-                        Bairro = (string)dr["bairro"],
-                        Cidade = (string)dr["cidade"],
-                        UF = (string)dr["uf"],
-                        CEP = (string)dr["cep"]
-                    }
-                );
+                        new Clientes
+                        {
+                            IdCliente = (int)dr["idcliente"],
+                            NomeCliente = (string)dr["nomecliente"],
+                            CPF = (string)dr["cpf"],
+                            RG = (string)dr["rg"],
+                            Telefone = (string)dr["telefone"],
+                            Endereco = (string)dr["endereco"],
+                            Numero = (int)dr["numero"],
+                            Bairro = (string)dr["bairro"],
+                            Cidade = (string)dr["cidade"],
+                            UF = (string)dr["uf"],
+                            CEP = (string)dr["cep"]
+                        }
+                    );
             }
+
             dr.Close();
             return Cliente;
         }
@@ -61,7 +64,7 @@ namespace OrcamentoRepository
 
             cmd.CommandText = sql.ToString();
 
-            MySqlDataReader dr = BaseDados.Get(cmd.CommandText);
+            MySqlDataReader dr = BaseDados.Get(cmd);
 
             dr.Read();
 

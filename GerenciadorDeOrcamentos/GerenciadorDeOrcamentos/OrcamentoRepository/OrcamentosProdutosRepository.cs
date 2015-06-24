@@ -17,7 +17,7 @@ namespace OrcamentoRepository
             MySqlCommand cmd = new MySqlCommand();
             List<OrcamentosProdutos> OrcamentoProduto = new List<OrcamentosProdutos>();
 
-            sql.Append("Select op*, o.idorcamento, p.idproduto ");
+            sql.Append("Select op.*, o.idorcamento, p.idproduto ");
             sql.Append("From orcamentosprodutos op ");
             sql.Append("inner join orcamentos o ");
             sql.Append("on o.idorcamento=op.idorcamento ");
@@ -55,7 +55,7 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("Select op*, o.idorcamento, p.idproduto ");
+            sql.Append("Select op.*, o.idorcamento, p.idproduto ");
             sql.Append("From orcamentosprodutos op ");
             sql.Append("inner join orcamentos o ");
             sql.Append("on o.idorcamento=op.idorcamento ");
@@ -92,28 +92,39 @@ namespace OrcamentoRepository
             return OrcamentoProduto;
         }
 
-        public void Create(OrcamentosProdutos pOrcProd)
+        public static int Create(OrcamentosProdutos pOrcProd)
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Insert into orcamentosprodutos (idorcamento, idproduto, quantidade, totalitem)" );
-            sql.Append("values(@idorcamento, @idproduto, @quantidade, @totalitem)" );
 
-            cmd.Parameters.AddWithValue("@idorcamento", pOrcProd.Orcamento.IdOrcamento);
+            Orcamentos Orcamentos = new Orcamentos();
+            Orcamentos = OrcamentosRepository.MaxId();
+            int IdOrcamento = Orcamentos.IdOrcamento;
+
+            Produtos Produto = new Produtos();
+            Produto = ProdutosRepository.GetOne(pOrcProd.Produto.IdProduto);
+            pOrcProd.TotalItem = Produto.Valor * pOrcProd.Quantidade;
+
+            sql.Append("Insert into orcamentosprodutos ");
+            sql.Append("values(@idorcamento, @idproduto, @quantidade, @totalitem)");
+
+            cmd.Parameters.AddWithValue("@idorcamento", IdOrcamento);
             cmd.Parameters.AddWithValue("@idproduto", pOrcProd.Produto.IdProduto);
             cmd.Parameters.AddWithValue("@quantidade", pOrcProd.Quantidade);
-            cmd.Parameters.AddWithValue("@totalitem", pOrcProd.TotalItem*pOrcProd.Produto.Valor);
+            cmd.Parameters.AddWithValue("@totalitem", pOrcProd.TotalItem);
 
             cmd.CommandText = sql.ToString();
 
             BaseDados.ComandPersist(cmd);
+
+            return IdOrcamento;
         }
 
         public void Delete(int pIdOrcamento, int pIdProduto)
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from orcamentos ");
+            sql.Append("Delete from orcamentosprodutos ");
             sql.Append("where idorcamento=@idorcamento and idproduto=@idproduto");
 
             cmd.Parameters.AddWithValue("@idorcamento", pIdOrcamento);

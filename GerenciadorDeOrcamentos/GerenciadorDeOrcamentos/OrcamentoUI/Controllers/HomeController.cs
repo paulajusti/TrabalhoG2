@@ -56,6 +56,10 @@ namespace OrcamentoUI.Controllers
         [HttpGet]
         public ActionResult DeleteCategorias(int pIdCategoria)
         {
+            //CategoriasRepository del = new CategoriasRepository();
+            //del.Delete(pIdCategoria);
+            //return RedirectToAction("IndexCategorias");
+
             var cat = CategoriasRepository.GetOne(pIdCategoria);
             return View(cat);
         }
@@ -65,7 +69,7 @@ namespace OrcamentoUI.Controllers
         {
             CategoriasRepository del = new CategoriasRepository();
             del.Delete(pCategoria.IdCategoria);
-            return RedirectToAction("IndexCategoria");
+            return RedirectToAction("IndexCategorias");
         }
         #endregion
 
@@ -130,7 +134,7 @@ namespace OrcamentoUI.Controllers
 
         public ActionResult IniciarOrcamentos()
         {
-            int IdOrcamento = OrcamentosRepository.CreateFirst();
+            int IdOrcamento = OrcamentosRepository.Create();
             return RedirectToAction("CreateOrcamentos", new { id = IdOrcamento });
         }
 
@@ -139,16 +143,26 @@ namespace OrcamentoUI.Controllers
         {
             ViewBag.Clientes = new SelectList(ClientesRepository.GetAll(), "IdCliente", "NomeCliente");
             ViewBag.Produtos = new SelectList(ProdutosRepository.GetAll(), "IdProduto", "NomeProduto");
-            ViewBag.OrcProd = OrcamentosProdutosRepository.GetAll();
+            List<OrcamentosProdutos> OrcProd = OrcamentosProdutosRepository.GetAll();
+            ViewBag.List = OrcProd;
             ViewBag.IdOrcamento = id;
             return View();
-        }
+        }   
 
         [HttpPost]
-        public ActionResult CreateOrcamentos(Orcamentos Orcamento)
+        public ActionResult CreateOrcamentos(Orcamentos Orcamento, int id)
         {
             OrcamentosRepository nova = new OrcamentosRepository();
-            nova.Create(Orcamento);
+            Orcamentos orcamento;
+            orcamento = new Orcamentos
+            {
+                Cliente = new Clientes
+                {
+                    IdCliente = Orcamento.Cliente.IdCliente
+                },
+                IdOrcamento = id,
+            };
+            nova.Edit(orcamento);
             return RedirectToAction("IndexOrcamentos");
         }
 
@@ -156,31 +170,58 @@ namespace OrcamentoUI.Controllers
         public ActionResult EditOrcamentos(int pIdOrcamento)
         {
             var orc = OrcamentosRepository.GetOne(pIdOrcamento);
-            return View(orc);
+            ViewBag.Clientes = new SelectList(ClientesRepository.GetAll(), "IdCliente", "NomeCliente");
+            ViewBag.Produtos = new SelectList(ProdutosRepository.GetAll(), "IdProduto", "NomeProduto");
+            List<OrcamentosProdutos> OrcProd = OrcamentosProdutosRepository.GetAll();
+            ViewBag.List = OrcProd;
+            ViewBag.IdOrcamento = pIdOrcamento;
+            return View();
         }
 
         [HttpPost]
-        public ActionResult EditOrcamentos(Orcamentos Orcamento)
+        public ActionResult EditOrcamentos(Orcamentos Orcamento, int pIdOrcamento)
         {
             OrcamentosRepository edit = new OrcamentosRepository();
-            edit.Edit(Orcamento);
+            Orcamentos orcamento;
+            orcamento = new Orcamentos
+            {
+                Cliente = new Clientes
+                {
+                    IdCliente = Orcamento.Cliente.IdCliente
+                },
+                IdOrcamento = pIdOrcamento
+            };
+            edit.Edit(orcamento);
             return RedirectToAction("IndexOrcamentos");
         }
+
+        //[HttpGet]
+        //public ActionResult DeleteOrcamentos(int pIdOrcamento)
+        //{
+        //    var orc = OrcamentosRepository.GetOne(pIdOrcamento);
+        //    return View(orc);
+        //}
 
         [HttpGet]
         public ActionResult DeleteOrcamentos(int pIdOrcamento)
         {
-            var orc = ClientesRepository.GetOne(pIdOrcamento);
-            return View(orc);
+            OrcamentosRepository del = new OrcamentosRepository();
+            del.Delete(pIdOrcamento);
+            return RedirectToAction("IndexOrcamentos");
+        }
+
+        [HttpGet]
+        public ActionResult VisualizarOrcamentos(int pIdOrcamento)
+        {
+            var orc = OrcamentosRepository.GetOne(pIdOrcamento);
+            List<OrcamentosProdutos> OrcProd = OrcamentosProdutosRepository.GetAll();
+            ViewBag.List = OrcProd;
+            ViewBag.IdOrcamento = pIdOrcamento;
+            ViewBag.Orc = orc;
+            return View();
         }
 
         [HttpPost]
-        public ActionResult DeleteOrcamentos(Orcamentos Orcamento)
-        {
-            OrcamentosRepository del = new OrcamentosRepository();
-            del.Delete(Orcamento.IdOrcamento);
-            return RedirectToAction("IndexOrcamento");
-        }
         #endregion
 
         #region OrcamentosProdutos
@@ -197,6 +238,35 @@ namespace OrcamentoUI.Controllers
         {
             int IdOrcamento = OrcamentosProdutosRepository.Create(OrcProd);
             return RedirectToAction("CreateOrcamentos", new { id = IdOrcamento });
+        }
+
+        [HttpGet]
+        public ActionResult EditarProduto(int pIdOrcamento, int pIdProduto)
+        {
+            var orcprod = OrcamentosProdutosRepository.GetOne(pIdOrcamento, pIdProduto);
+            return View(orcprod);
+        }
+
+        [HttpPost]
+        public ActionResult EditarProduto(OrcamentosProdutos OrcProd, int pIdOrcamento, int pIdProduto)
+        {
+            OrcamentosProdutosRepository edit = new OrcamentosProdutosRepository();
+            OrcamentosProdutos orcprod;
+
+            orcprod = new OrcamentosProdutos
+            {
+                Orcamento = new Orcamentos
+                {
+                    IdOrcamento = pIdOrcamento
+                },
+                Produto = new Produtos
+                {
+                    IdProduto = pIdProduto
+                },
+                Quantidade = OrcProd.Quantidade
+            };
+            edit.Edit(orcprod);
+            return RedirectToAction("CreateOrcamentos", new { id = pIdOrcamento });
         }
 
         [HttpGet]

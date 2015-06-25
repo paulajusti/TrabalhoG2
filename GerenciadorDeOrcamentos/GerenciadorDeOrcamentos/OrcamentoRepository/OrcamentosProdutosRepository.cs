@@ -17,7 +17,7 @@ namespace OrcamentoRepository
             MySqlCommand cmd = new MySqlCommand();
             List<OrcamentosProdutos> OrcamentoProduto = new List<OrcamentosProdutos>();
 
-            sql.Append("Select op.*, o.idorcamento, p.idproduto ");
+            sql.Append("Select op.*, o.idorcamento, p.idproduto, p.nomeproduto, p.valor ");
             sql.Append("From orcamentosprodutos op ");
             sql.Append("inner join orcamentos o ");
             sql.Append("on o.idorcamento=op.idorcamento ");
@@ -39,6 +39,8 @@ namespace OrcamentoRepository
                         },
                         Produto = new Produtos
                         {
+                            NomeProduto = (string)dr["nomeproduto"],
+                            Valor = (decimal)dr["valor"],
                             IdProduto = (int)dr["idproduto"]
                         },
                         Quantidade = (decimal)dr["quantidade"],
@@ -61,7 +63,7 @@ namespace OrcamentoRepository
             sql.Append("on o.idorcamento=op.idorcamento ");
             sql.Append("inner join produtos p ");
             sql.Append("on p.idproduto=op.idproduto ");
-            sql.Append("Where idorcamento=@idorcamento and idproduto=@idpproduto");
+            sql.Append("Where op.idorcamento=@idorcamento and op.idproduto=@idproduto");
 
             cmd.Parameters.AddWithValue("@idorcamento", pIdOrcamento);
             cmd.Parameters.AddWithValue("@idproduto", pIdProduto);
@@ -120,6 +122,28 @@ namespace OrcamentoRepository
             return IdOrcamento;
         }
 
+        public void Edit(OrcamentosProdutos pOrcProd)
+        {
+            StringBuilder sql = new StringBuilder();
+            MySqlCommand cmd = new MySqlCommand();
+
+            Produtos Produto = new Produtos();
+            Produto = ProdutosRepository.GetOne(pOrcProd.Produto.IdProduto);
+            pOrcProd.TotalItem = Produto.Valor * pOrcProd.Quantidade;
+
+            sql.Append("Update orcamentosprodutos ");
+            sql.Append("set quantidade=@quantidade, totalitem=@totalitem ");
+            sql.Append("where idorcamento=@idorcamento and idproduto=@idproduto");
+
+            cmd.Parameters.AddWithValue("@quantidade", pOrcProd.Quantidade);
+            cmd.Parameters.AddWithValue("@totalitem", pOrcProd.TotalItem);
+            cmd.Parameters.AddWithValue("@idorcamento", pOrcProd.Orcamento.IdOrcamento);
+            cmd.Parameters.AddWithValue("@idproduto", pOrcProd.Produto.IdProduto);
+
+            cmd.CommandText = sql.ToString();
+
+            BaseDados.ComandPersist(cmd);
+        }
         public void Delete(int pIdOrcamento, int pIdProduto)
         {
             StringBuilder sql = new StringBuilder();

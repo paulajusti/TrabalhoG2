@@ -17,14 +17,10 @@ namespace OrcamentoRepository
             MySqlCommand cmd = new MySqlCommand();
             List<Orcamentos> Orcamento = new List<Orcamentos>();
 
-            sql.Append("Select o.idorcamento, nomecliente, nomeproduto ");
+            sql.Append("Select o.idorcamento, c.nomecliente, c.idcliente ");
             sql.Append("From orcamentos o ");
             sql.Append("inner join clientes c ");
             sql.Append("on o.idcliente=c.idcliente ");
-            sql.Append("inner join orcamentosprodutos op ");
-            sql.Append("on o.idorcamento=op.idorcamento ");
-            sql.Append("inner join produtos p ");
-            sql.Append("on op.idproduto=p.idproduto ");
             sql.Append("order by idorcamento asc");
 
             cmd.CommandText = sql.ToString();
@@ -39,10 +35,9 @@ namespace OrcamentoRepository
                         IdOrcamento = (int)dr["idorcamento"],
                         Cliente = new Clientes
                         {
-                            NomeCliente = (string)dr["nomecliente"]
-                        },
-                        //Produto = (List<Produtos>)dr["nomeproduto"]
-                        TotalOrcamento = (decimal)dr["totalorcamento"]
+                            NomeCliente = (string)dr["nomecliente"],
+                            IdCliente = (int)dr["idcliente"]
+                        }
                     }
                 );
             }
@@ -55,14 +50,10 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("Select o.idorcamento, nomecliente, nomeproduto ");
+            sql.Append("Select o.idorcamento, c.nomecliente, c.idcliente ");
             sql.Append("From orcamentos o ");
             sql.Append("inner join clientes c ");
             sql.Append("on o.idcliente=c.idcliente ");
-            sql.Append("inner join orcamentosprodutos op ");
-            sql.Append("on o.idorcamento=op.idorcamento ");
-            sql.Append("inner join produtos p ");
-            sql.Append("on op.idproduto=p.idproduto ");
             sql.Append("Where idorcamento=@idorcamento");
 
             cmd.Parameters.AddWithValue("@idorcamento", pIdOrcamento);
@@ -80,17 +71,16 @@ namespace OrcamentoRepository
                 IdOrcamento = (int)dr["idorcamento"],
                 Cliente = new Clientes
                 {
-                    NomeCliente = (string)dr["nomecliente"]
+                    NomeCliente = (string)dr["nomecliente"],
+                    IdCliente = (int)dr["idcliente"]
                 },
-                TotalOrcamento = (decimal)dr["totalorcamento"]
-                // Produto = (List<Produtos>)dr["nomeproduto"]
             };
 
             dr.Close();
             return Orcamento;
         }
 
-        public static int CreateFirst()
+        public static int Create()
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
@@ -111,21 +101,20 @@ namespace OrcamentoRepository
             return id;
         }
 
-        public void Create(Orcamentos pOrcamento)
-        {
-            StringBuilder sql = new StringBuilder();
-            MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Insert into orcamentos (idorcamento, idcliente, totalorcamento)" );
-            sql.Append("values(@idorcamento, @idcliente, @totalorcamento)");
+        //public void Create(Orcamentos pOrcamento)
+        //{
+        //    StringBuilder sql = new StringBuilder();
+        //    MySqlCommand cmd = new MySqlCommand();
+        //    sql.Append("Insert into orcamentos (idorcamento, idcliente)" );
+        //    sql.Append("values(@idorcamento, @idcliente)");
 
-            cmd.Parameters.AddWithValue("@idorcamento", pOrcamento.IdOrcamento);
-            cmd.Parameters.AddWithValue("@idcliente", pOrcamento.Cliente.IdCliente);
-            cmd.Parameters.AddWithValue("@totalorcamento", pOrcamento.TotalOrcamento);
+        //    cmd.Parameters.AddWithValue("@idorcamento", pOrcamento.IdOrcamento);
+        //    cmd.Parameters.AddWithValue("@idcliente", pOrcamento.Cliente.IdCliente);
 
-            cmd.CommandText = sql.ToString();
+        //    cmd.CommandText = sql.ToString();
 
-            BaseDados.ComandPersist(cmd);
-        }
+        //    BaseDados.ComandPersist(cmd);
+        //}
 
         public void Delete(int pIdOrcamento)
         {
@@ -146,13 +135,11 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
             sql.Append("update orcamentos ");
-            sql.Append("set idcliente=@idcliente, totalorcamento=@totalorcamento ");
+            sql.Append("set idcliente=@idcliente ");
             sql.Append("where idorcamento=@idorcamento");
-
 
             cmd.Parameters.AddWithValue("@idorcamento", pOrcamento.IdOrcamento);
             cmd.Parameters.AddWithValue("@idcliente", pOrcamento.Cliente.IdCliente);
-            cmd.Parameters.AddWithValue("@totalorcamento", pOrcamento.TotalOrcamento);
 
             cmd.CommandText = sql.ToString();
 

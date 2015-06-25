@@ -5,7 +5,7 @@
 }
 
 <br />
-<h4>@Html.ActionLink("Novo", "CreateOrcamentos") </h4>
+<h4>@Html.ActionLink("Novo", "IniciarOrcamentos") </h4>
 
 
 <h1>Orçamentos</h1>
@@ -13,7 +13,7 @@
     <tr>
         <th>Código</th>
         <th>Cliente</th>
-        <th>Produtos</th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -22,8 +22,8 @@
     {
         <tr>
             <td>@orcamento.IdOrcamento</td>
-            <td>@orcamento.Cliente</td>
-            <td>@orcamento.Produto</td>
+            <td>@orcamento.Cliente.NomeCliente</td>
+            <td>@Html.ActionLink("Visualizar", "VisualizarOrcamentos", new { pIdOrcamento = orcamento.IdOrcamento }) </td>
             <td>@Html.ActionLink("Editar", "EditOrcamentos", new { pIdOrcamento = orcamento.IdOrcamento }) </td>
             <td>@Html.ActionLink("Excluir", "DeleteOrcamentos", new { pIdOrcamento = orcamento.IdOrcamento })</td>
         </tr>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OrcamentoData.OrcamentosProdutos>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Valor Unitário</th>
+        <th>Quantidade</th>
+        <th>Total Item</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{var OrcProd = (List<OrcamentoData.OrcamentosProdutos>)ViewBag.List;}
+
+    @{int IdOrcProd = ViewBag.IdOrcamento;}
+
+    @{decimal TotalOrc = 0;}
+
+    @if (OrcProd != null)
+    {
+        foreach (var orcprod in OrcProd)
+        {
+            if (orcprod.Orcamento.IdOrcamento == IdOrcProd)
+            {
+                <tr>
+                    <td>@orcprod.Produto.NomeProduto</td>
+                    <td>@orcprod.Produto.Valor</td>
+                    <td>@orcprod.Quantidade</td>
+                    <td>@orcprod.TotalItem</td>
+                    <td>@Html.ActionLink("Editar", "EditarProduto", new { pIdOrcamento = orcprod.Orcamento.IdOrcamento, pIdProduto = orcprod.Produto.IdProduto })</td>
+                    <td>@Html.ActionLink("Excluir", "ExcluirProduto", new { pIdOrcamento = orcprod.Orcamento.IdOrcamento, pIdProduto = orcprod.Produto.IdProduto })</td>
+                </tr>
+                TotalOrc = TotalOrc + @orcprod.TotalItem;
+            }
+        }
+    }
+    <tr>
+        <th>Total Orcamento</th>
+        <th></th>
+        <th></th>
+        <th>@TotalOrc</th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>

@@ -1,0 +1,28 @@
+﻿@model OrcamentoData.Orcamentos
+
+@{
+    ViewBag.Title = "VisualizarOrcamentos";
+}
+
+<h2>VisualizarOrcamentos</h2>
+
+<table class="table">
+    <tr>
+        <th>Código Orçamento</th>
+        <th>Cliente</th>
+    </tr>
+
+    @{var Orc = ViewBag.Orc;}
+
+    <tr>
+        <td>@Orc.IdOrcamento</td>
+        <td>@Orc.Cliente.IdCliente</td>
+    </tr>
+
+    <tr>
+        <th>Produtos</th>
+        <th></th>
+        <th></th>
+        @Html.Partial("_IndexOrcProd2")
+    </tr>
+</table>

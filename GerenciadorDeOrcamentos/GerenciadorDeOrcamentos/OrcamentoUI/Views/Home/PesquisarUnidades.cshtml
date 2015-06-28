@@ -1,0 +1,37 @@
+﻿@model IEnumerable<OrcamentoData.Unidades>
+
+@{
+    ViewBag.Title = "PesquisarUnidades";
+}
+
+<h2>PesquisarUnidades</h2>
+<br /><br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUnidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeUnidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sigla)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUnidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeUnidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sigla)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,47 @@
+﻿<body background="">
+    @model OrcamentoData.User
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <div style="max-width: 360px; padding: 15px;  margin: 0 auto; background-color:rgb(226, 226, 226);">
+                <h4 style="text-align:center; margin-bottom:10%; margin-top:3%;">Login</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div style="margin-left:7%;">
+                    <div style="margin-left:-4%;">
+                        @Html.LabelFor(model => model.emailusuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </div>
+                    <br />
+                    @Html.EditorFor(model => model.emailusuario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.emailusuario, "", new { @class = "text-danger" })
+
+                    <br />
+                    <div style="margin-left:-4%;">
+                        @Html.LabelFor(model => model.senhausuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </div>
+                    <br />
+                    @Html.EditorFor(model => model.senhausuario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.senhausuario, "", new { @class = "text-danger" })
+                    <br /><br />
+                    <div style="margin-bottom:4%;">
+                        <input type="submit" style="width:100%;" value="Entrar" class="btn btn-primary" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    <div style="margin-top:9%; text-align:right">
+        @Html.ActionLink("Entrar sem Login", "IndexCategorias")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>

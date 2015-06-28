@@ -1,0 +1,33 @@
+﻿@model OrcamentoData.Orcamentos
+
+@{
+    ViewBag.Title = "DeleteOrcamentos";
+}
+
+<h2>DeleteOrcamentos</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Orcamentos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdOrcamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdOrcamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "IndexOrcamentos")
+    </p>
+}

@@ -1,0 +1,55 @@
+﻿@model OrcamentoData.Orcamentos
+
+@{
+    ViewBag.Title = "CreateOrcamentos";
+}
+
+<h2>CreateOrcamentos</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Orcamentos</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.IdOrcamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdOrcamento)
+            @Html.ValidationMessageFor(model => model.IdOrcamento)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cliente.IdCliente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cliente.IdCliente)
+            @Html.ValidationMessageFor(model => model.Cliente.IdCliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Produtos")
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto)
+            @Html.ValidationMessageFor(model => model.Produto)
+        </div>
+
+        <h4>@Html.ActionLink("Adicionar produtos", "AddProdutos") </h4>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexOrcamentos")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

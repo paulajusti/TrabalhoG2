@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OrcamentoData.Categorias>
+
+@{
+    ViewBag.Title = "PesquisarCategorias";
+}
+
+<h2>PesquisarCategorias</h2>
+<br /><br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoCategoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoCategoria)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,103 @@
+﻿@model IEnumerable<OrcamentoData.Clientes>
+
+@{
+    ViewBag.Title = "IndexClientes";
+}
+
+<h2>Clientes</h2>
+
+
+<div style="margin-left:78%;">
+    <h4 style="margin-left:5%;">Pesquisar Por Nome:</h4>
+    <form action="/Home/PesquisarClientes" method="post" style="text-align:left">
+        <input style="width: 100px;" id="Nome" type="text" name="Nome" />
+        <input type="submit" name="pesquisar" value="Pesquisar" />
+    </form>
+</div>
+<br />
+
+
+<p>
+    @Html.ActionLink("Cadastrar", "CreateClientes")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEP)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditClientes", new { pIdCliente = item.IdCliente }) |
+            @Html.ActionLink("Deletar", "DeleteClientes", new { pIdCliente = item.IdCliente })
+        </td>
+    </tr>
+}
+
+</table>

@@ -4,25 +4,44 @@
     ViewBag.Title = "VisualizarOrcamentos";
 }
 
-<h2>VisualizarOrcamentos</h2>
+<h2>Orcamento</h2>
 
 <table class="table">
-    <tr>
-        <th>Código Orçamento</th>
-        <th>Cliente</th>
-    </tr>
-
     @{var Orc = ViewBag.Orc;}
 
     <tr>
+        <th>Código Orçamento: </th>
         <td>@Orc.IdOrcamento</td>
-        <td>@Orc.Cliente.IdCliente</td>
+    </tr>
+    <tr>
+        <th>Cliente: </th>
+        <td>@Orc.Cliente.Nome</td>
+    </tr>
+    <tr>
+        <th>Telefone: </th>
+        <td>@Orc.Cliente.Telefone</td>
+    </tr>
+    <tr>
+        <th>Endereço: </th>
+        <td>@Orc.Cliente.Endereco</td>
+        <th>Número: </th>
+        <td>@Orc.Cliente.Numero</td>
+    </tr>
+    <tr>
+        <th>Bairro: </th>
+        <td>@Orc.Cliente.Bairro</td>
+        <th>Cidade: </th>
+        <td>@Orc.Cliente.Cidade</td>
+    </tr>
+    <tr>
+        <th>UF: </th>
+        <td>@Orc.Cliente.UF</td>
+        <th>CEP: </th>
+        <td>@Orc.Cliente.CEP</td>
     </tr>
 
     <tr>
         <th>Produtos</th>
-        <th></th>
-        <th></th>
         @Html.Partial("_IndexOrcProd2")
     </tr>
 </table>

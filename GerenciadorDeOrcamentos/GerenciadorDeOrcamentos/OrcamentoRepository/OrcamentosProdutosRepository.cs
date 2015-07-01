@@ -17,12 +17,14 @@ namespace OrcamentoRepository
             MySqlCommand cmd = new MySqlCommand();
             List<OrcamentosProdutos> OrcamentoProduto = new List<OrcamentosProdutos>();
 
-            sql.Append("Select op.*, o.idorcamento, p.idproduto, p.nomeproduto, p.valor ");
+            sql.Append("Select op.*, o.idorcamento, p.idproduto, p.nomeproduto, p.valor, u.sigla ");
             sql.Append("From orcamentosprodutos op ");
             sql.Append("inner join orcamentos o ");
             sql.Append("on o.idorcamento=op.idorcamento ");
             sql.Append("inner join produtos p ");
             sql.Append("on p.idproduto=op.idproduto ");
+            sql.Append("inner join unidades u ");
+            sql.Append("on p.idunidade=u.idunidade ");
 
             cmd.CommandText = sql.ToString();
 
@@ -41,7 +43,11 @@ namespace OrcamentoRepository
                         {
                             NomeProduto = (string)dr["nomeproduto"],
                             Valor = (decimal)dr["valor"],
-                            IdProduto = (int)dr["idproduto"]
+                            IdProduto = (int)dr["idproduto"],
+                            Unidade = new Unidades
+                            {
+                                Sigla = (string)dr["sigla"]
+                            }
                         },
                         Quantidade = (decimal)dr["quantidade"],
                         TotalItem = (decimal)dr["totalitem"]
@@ -57,12 +63,14 @@ namespace OrcamentoRepository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("Select op.*, o.idorcamento, p.idproduto ");
+            sql.Append("Select op.*, o.idorcamento, p.idproduto, p.nomeproduto, p.valor, u.sigla ");
             sql.Append("From orcamentosprodutos op ");
             sql.Append("inner join orcamentos o ");
             sql.Append("on o.idorcamento=op.idorcamento ");
             sql.Append("inner join produtos p ");
             sql.Append("on p.idproduto=op.idproduto ");
+            sql.Append("inner join unidades u ");
+            sql.Append("on p.idunidade=u.idunidade ");
             sql.Append("Where op.idorcamento=@idorcamento and op.idproduto=@idproduto");
 
             cmd.Parameters.AddWithValue("@idorcamento", pIdOrcamento);
@@ -84,7 +92,13 @@ namespace OrcamentoRepository
                 },
                 Produto = new Produtos
                 {
-                    IdProduto = (int)dr["idproduto"]
+                    NomeProduto = (string)dr["nomeproduto"],
+                    Valor = (decimal)dr["valor"],
+                    IdProduto = (int)dr["idproduto"],
+                    Unidade = new Unidades
+                    {
+                        Sigla = (string)dr["sigla"]
+                    }
                 },
                 Quantidade = (decimal)dr["quantidade"],
                 TotalItem = (decimal)dr["totalitem"]

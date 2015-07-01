@@ -117,16 +117,23 @@ namespace OrcamentoRepository
 
         public void Delete(int pIdProduto)
         {
-            StringBuilder sql = new StringBuilder();
-            MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from produtos ");
-            sql.Append("where idproduto=@idproduto");
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                MySqlCommand cmd = new MySqlCommand();
+                sql.Append("Delete from produtos ");
+                sql.Append("where idproduto=@idproduto");
 
-            cmd.Parameters.AddWithValue("@idproduto", pIdProduto);
+                cmd.Parameters.AddWithValue("@idproduto", pIdProduto);
 
-            cmd.CommandText = sql.ToString();
+                cmd.CommandText = sql.ToString();
 
-            BaseDados.ComandPersist(cmd);
+                BaseDados.ComandPersist(cmd);
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         public void Edit(Produtos pProduto)

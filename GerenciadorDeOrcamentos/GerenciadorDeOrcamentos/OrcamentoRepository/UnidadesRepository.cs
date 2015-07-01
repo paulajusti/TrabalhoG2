@@ -88,16 +88,23 @@ namespace OrcamentoRepository
 
         public void Delete(int pIdUnidade)
         {
-            StringBuilder sql = new StringBuilder();
-            MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from unidades ");
-            sql.Append("where idunidade=@idunidade");
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                MySqlCommand cmd = new MySqlCommand();
+                sql.Append("Delete from unidades ");
+                sql.Append("where idunidade=@idunidade");
 
-            cmd.Parameters.AddWithValue("@idunidade", pIdUnidade);
+                cmd.Parameters.AddWithValue("@idunidade", pIdUnidade);
 
-            cmd.CommandText = sql.ToString();
+                cmd.CommandText = sql.ToString();
 
-            BaseDados.ComandPersist(cmd);
+                BaseDados.ComandPersist(cmd);
+
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void Edit(Unidades pUnidade)

@@ -1,11 +1,14 @@
 ﻿using Conexao;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using OrcamentoData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace OrcamentoRepository
 {
@@ -30,7 +33,7 @@ namespace OrcamentoRepository
                 Categoria.Add(
                     new Categorias
                     {
-                        IdCategoria  = (int)dr["idcategoria"],
+                        IdCategoria = (int)dr["idcategoria"],
                         NomeCategoria = (string)dr["nomecategoria"],
                         DescricaoCategoria = (string)dr["descricaocategoria"]
                     }
@@ -88,16 +91,22 @@ namespace OrcamentoRepository
 
         public void Delete(int pIdCategoria)
         {
-            StringBuilder sql = new StringBuilder();
-            MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from categorias ");
-            sql.Append("where idcategoria=@idcategoria");
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                MySqlCommand cmd = new MySqlCommand();
+                sql.Append("Delete from categorias ");
+                sql.Append("where idcategoria=@idcategoria");
 
-            cmd.Parameters.AddWithValue("@idcategoria", pIdCategoria);
+                cmd.Parameters.AddWithValue("@idcategoria", pIdCategoria);
 
-            cmd.CommandText = sql.ToString();
+                cmd.CommandText = sql.ToString();
 
-            BaseDados.ComandPersist(cmd);
+                BaseDados.ComandPersist(cmd);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void Edit(Categorias pCategorias)
@@ -126,7 +135,7 @@ namespace OrcamentoRepository
             List<Categorias> Categoria = new List<Categorias>();
 
             sql.Append("Select * ");
-            sql.Append("From categorias where nomecategoria like '%"+Nome+"%'");
+            sql.Append("From categorias where nomecategoria like '%" + Nome + "%'");
             sql.Append("order by nomecategoria asc");
             cmd.CommandText = sql.ToString();
 
@@ -146,7 +155,5 @@ namespace OrcamentoRepository
             dr.Close();
             return Categoria;
         }
-
-
     }
 }

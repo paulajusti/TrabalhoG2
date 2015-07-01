@@ -121,16 +121,22 @@ namespace OrcamentoRepository
 
         public void Delete(int pIdCliente)
         {
-            StringBuilder sql = new StringBuilder();
-            MySqlCommand cmd = new MySqlCommand();
-            sql.Append("Delete from clientes ");
-            sql.Append("where idcliente=@idcliente");
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                MySqlCommand cmd = new MySqlCommand();
+                sql.Append("Delete from clientes ");
+                sql.Append("where idcliente=@idcliente");
 
-            cmd.Parameters.AddWithValue("@idcliente", pIdCliente);
+                cmd.Parameters.AddWithValue("@idcliente", pIdCliente);
 
-            cmd.CommandText = sql.ToString();
+                cmd.CommandText = sql.ToString();
 
-            BaseDados.ComandPersist(cmd);
+                BaseDados.ComandPersist(cmd);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void Edit(Clientes pCliente)

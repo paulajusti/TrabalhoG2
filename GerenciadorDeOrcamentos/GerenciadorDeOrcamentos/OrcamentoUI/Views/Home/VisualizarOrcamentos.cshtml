@@ -4,44 +4,63 @@
     ViewBag.Title = "VisualizarOrcamentos";
 }
 
-<h2>Orcamento</h2>
-
-<table class="table">
-    @{var Orc = ViewBag.Orc;}
-
-    <tr>
-        <th>Código Orçamento: </th>
-        <td>@Orc.IdOrcamento</td>
-    </tr>
-    <tr>
-        <th>Cliente: </th>
-        <td>@Orc.Cliente.Nome</td>
-    </tr>
-    <tr>
-        <th>Telefone: </th>
-        <td>@Orc.Cliente.Telefone</td>
-    </tr>
-    <tr>
-        <th>Endereço: </th>
-        <td>@Orc.Cliente.Endereco</td>
-        <th>Número: </th>
-        <td>@Orc.Cliente.Numero</td>
-    </tr>
-    <tr>
-        <th>Bairro: </th>
-        <td>@Orc.Cliente.Bairro</td>
-        <th>Cidade: </th>
-        <td>@Orc.Cliente.Cidade</td>
-    </tr>
-    <tr>
-        <th>UF: </th>
-        <td>@Orc.Cliente.UF</td>
-        <th>CEP: </th>
-        <td>@Orc.Cliente.CEP</td>
-    </tr>
-
-    <tr>
-        <th>Produtos</th>
-        @Html.Partial("_IndexOrcProd2")
-    </tr>
+<h3 style="text-align:center;">Orçamento</h3>
+<br />
+<table>
+    <td width="290px;"></td>
+    <td>
+        <table class="table" style="border:2px solid gray;">
+            @{var Orc = ViewBag.Orc;}
+            <tr>
+                <th style="background-color:rgb(231, 231, 231);">Dados do Cliente</th>
+                <th style="background-color:rgb(231, 231, 231);"></th>
+                <th style="background-color:rgb(231, 231, 231);"></th>
+                <th style="background-color:rgb(231, 231, 231);"></th>
+            </tr>
+            <tr>
+                <th>Código Orçamento: </th>
+                <td>@Orc.IdOrcamento</td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Cliente: </th>
+                <td>@Orc.Cliente.NomeCliente</td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Telefone: </th>
+                <td>@Orc.Cliente.Telefone</td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Endereço: </th>
+                <td>@Orc.Cliente.Endereco</td>
+                <th>Número: </th>
+                <td>@Orc.Cliente.Numero</td>
+            </tr>
+            <tr>
+                <th>Bairro: </th>
+                <td>@Orc.Cliente.Bairro</td>
+                <th>Cidade: </th>
+                <td>@Orc.Cliente.Cidade</td>
+            </tr>
+            <tr>
+                <th>UF: </th>
+                <td>@Orc.Cliente.UF</td>
+                <th>CEP: </th>
+                <td>@Orc.Cliente.CEP</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <table style="border:2px solid gray;">
+            <tr>
+                @Html.Partial("_IndexOrcProd2")
+            </tr>
+        </table>
+    </td>
+    <td></td>
 </table>

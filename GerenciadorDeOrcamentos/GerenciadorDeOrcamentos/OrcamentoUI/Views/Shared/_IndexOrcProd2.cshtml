@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<OrcamentoData.OrcamentosProdutos>
 
-<table class="table">
+<table class="table" style="border:2px solid gray;">
+    <tr>
+        <th style="background-color:rgb(231, 231, 231);">Dados dos Produtos</th>
+        <th style="background-color:rgb(231, 231, 231);"></th>
+        <th style="background-color:rgb(231, 231, 231);"></th>
+        <th style="background-color:rgb(231, 231, 231);"></th>
+        <th style="background-color:rgb(231, 231, 231);"></th>
+    </tr>
     <tr>
         <th>Unid.</th>
         <th>Descriminação do Produto</th>
@@ -13,7 +20,7 @@
 
     @{int IdOrcProd = ViewBag.IdOrcamento;}
 
-    @{decimal TotalOrc = 0.2M;}
+    @{decimal TotalOrc = 0;}
 
     @if (OrcProd != null)
     {

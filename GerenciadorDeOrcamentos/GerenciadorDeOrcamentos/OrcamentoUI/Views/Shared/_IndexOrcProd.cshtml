@@ -2,10 +2,14 @@
 
 <table class="table">
     <tr>
-        <th>Nome</th>
-        <th>Valor Unitário</th>
-        <th>Quantidade</th>
-        <th>Total Item</th>
+        <th>Produtos</th>
+    </tr>
+    <tr>
+        <th>Unid.</th>
+        <th>Descriminação do Produto</th>
+        <th>Quant.</th>
+        <th>V. Unitário</th>
+        <th>Total</th>
         <th></th>
         <th></th>
     </tr>
@@ -23,9 +27,10 @@
             if (orcprod.Orcamento.IdOrcamento == IdOrcProd)
             {
                 <tr>
+                    <td>@orcprod.Produto.Unidade.Sigla</td>
                     <td>@orcprod.Produto.NomeProduto</td>
-                    <td>@orcprod.Produto.Valor</td>
                     <td>@orcprod.Quantidade</td>
+                    <td>@orcprod.Produto.Valor</td>
                     <td>@orcprod.TotalItem</td>
                     <td>@Html.ActionLink("Editar", "EditarProduto", new { pIdOrcamento = orcprod.Orcamento.IdOrcamento, pIdProduto = orcprod.Produto.IdProduto })</td>
                     <td>@Html.ActionLink("Excluir", "ExcluirProduto", new { pIdOrcamento = orcprod.Orcamento.IdOrcamento, pIdProduto = orcprod.Produto.IdProduto })</td>
